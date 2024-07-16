@@ -2,7 +2,7 @@
 
 ### Response Length
 
-Eine unterschiedliche Response Length (wenn alle anderen ~gleich sind) kann ein Hinweis über eine andere Response geben.
+Eine unterschiedliche Response Length (_wenn alle anderen ~gleich sind_) kann ein Hinweis über eine andere Response geben.
 -> Blick draufwerfen
 
 ### BurpSuite grep-Match
