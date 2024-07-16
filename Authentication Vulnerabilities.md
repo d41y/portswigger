@@ -53,5 +53,5 @@ _To solve the lab, enumerate a valid username, brute-force this user's password,
 ### Folgerung
 
 - der kleinste Unterschied in der Zeichenkette, die bei unterschiedlichen Responses ausgegeben wird, kann entscheidend sein
-    -> Hier war es der Punkt
+    -> Hier war es der Punkt\n
     -> BurpSuite grep-Match sehr stark!
