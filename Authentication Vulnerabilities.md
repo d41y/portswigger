@@ -30,7 +30,7 @@ _To solve the lab, enumerate a valid username, brute-force this user's password,
 - Wordlists von Websites erstellen -> automatisieren!
     -> CeWL?\
     -> Crunch?\
-    -> ODER ABER VIELLEICHT MAL DIE AUFGABENSTELLUNG ORDENTLICH LESEN!!! -> WORDLISTS\
+    -> ODER ABER VIELLEICHT MAL DIE AUFGABENSTELLUNG ORDENTLICH LESEN!!! -> WORDLISTS
 - Response-Length ist nicht zu vernachlässigen!
 
 ## Lab: Username enumeration via subtly different responses
@@ -42,7 +42,7 @@ _To solve the lab, enumerate a valid username, brute-force this user's password,
 - Ähnlich wie in der Aufgabe zuvor
     -> BurpSuite\
     -> falschen Username und falsches Passwort und das mit BurpSuite abfangen\
-    -> Wordlist Usernames und ein grep-Match setzen 'Invalid username and password.'\
+    -> Wordlist Usernames und ein grep-Match setzen 'Invalid username and password.'
     
 
 ### Ergebnis
@@ -54,4 +54,4 @@ _To solve the lab, enumerate a valid username, brute-force this user's password,
 
 - der kleinste Unterschied in der Zeichenkette, die bei unterschiedlichen Responses ausgegeben wird, kann entscheidend sein
     -> Hier war es der Punkt\
-    -> BurpSuite grep-Match sehr stark!\
+    -> BurpSuite grep-Match sehr stark!
