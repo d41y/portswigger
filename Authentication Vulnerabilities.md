@@ -73,12 +73,17 @@ _This lab is vulnerable to username enumeration using its response times. To sol
         - Ist der Username richtig, geht es mit dem Passwort weiter\
             - Passwort sehr lang setzen -> lange Response-Time\
 - Ähnlich bei Passwort
+    - Rammbock-Attacke
     - auf den Status-Code achten -> muss ein 302 Redirect sein
 
 ### Ergebnisse
 
 - Username: Info (_hat die längste Response-Time_)
     - Beim nächsten mal vielleicht einen bekannten User mit in die Wordlist setzen, um zu sehen, ob sich die Response-Times ähneln
-- Passwort: 
+- Passwort: jordan
 
 ### Folgerung
+
+- Status-Code ist wichtig (und logisch)
+- künstliche Verlängerung der Response-Time durch langen String, der beim Verarbeiten deutlich länger braucht
+- IP-Spoofing kann wichtig sein

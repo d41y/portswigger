@@ -5,6 +5,10 @@
 Eine unterschiedliche Response Length (_wenn alle anderen ~gleich sind_) kann ein Hinweis über eine andere Response geben.\
 -> Blick draufwerfen
 
+### Response Time
+
+Kann durch das Hinzufügen von langen Strings küsntlich vergrößert werden. Das kann zu einer besseren Unterscheidung in der Art und Weise, wie Anfragen bearbeitet werden, führen.
+
 ### BurpSuite grep-Match
 
 Vorher anschauen, was die ausgegebene Antwort auf falsche Credentials ist.\
