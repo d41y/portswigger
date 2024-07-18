@@ -78,7 +78,7 @@ _This lab is vulnerable to username enumeration using its response times. To sol
 ### Ergebnisse
 
 - Username: Info (_hat die längste Response-Time_)
-    -> Beim nächsten mal vielleicht einen bekannten User mit in die Wordlist setzen, um zu sehen, ob sich die Response-Times ähneln\
-- 
+    - Beim nächsten mal vielleicht einen bekannten User mit in die Wordlist setzen, um zu sehen, ob sich die Response-Times ähneln
+- Passwort: 
 
 ### Folgerung
