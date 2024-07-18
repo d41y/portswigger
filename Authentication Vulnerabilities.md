@@ -55,3 +55,30 @@ _To solve the lab, enumerate a valid username, brute-force this user's password,
 - der kleinste Unterschied in der Zeichenkette, die bei unterschiedlichen Responses ausgegeben wird, kann entscheidend sein\
     -> Hier war es der Punkt\
     -> BurpSuite grep-Match sehr stark!
+
+## Lab: Username enumeration via response timing
+
+_This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user's password, then access their account page._
+
+### Durchführung
+
+- Login-Versuch mit der Username-Liste
+    -> IP-Adresse wird gesperrt\
+    -> Hinweis auf zu setzenden Header ('X-Forwarded-For')\
+        -> _If an application trusts an HTTP request header like X-Forwarded-For to accurately specify the remote IP address of the connecting client, then malicious clients can spoof their IP address. This behavior does not necessarily constitute a security vulnerability, however some applications use client IP addresses to enforce access controls and rate limits._\
+        -> Header einfach per Rammbock-Attacke gleich wie Username setzen\
+    -> Response-Time ist trotzdem nichtsaussagend\
+    -> Kurz drüber nachdenken:\
+        -> Die Response-Time wird länger, je nachdem wie viel geprüft wird\
+        -> Ist der Username richtig, geht es mit dem Passwort weiter\
+            -> Passwort sehr lang setzen -> lange Response-Time\
+- Ähnlich bei Passwort
+    -> auf den Status-Code achten -> muss ein 302 Redirect sein
+
+### Ergebnisse
+
+- Username: Info (_hat die längste Response-Time_)
+    -> Beim nächsten mal vielleicht einen bekannten User mit in die Wordlist setzen, um zu sehen, ob sich die Response-Times ähneln\
+- 
+
+### Folgerung
