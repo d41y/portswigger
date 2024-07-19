@@ -7,7 +7,7 @@ Eine unterschiedliche Response Length (_wenn alle anderen ~gleich sind_) kann ei
 
 ### Response Time
 
-Kann durch das Hinzufügen von langen Strings küsntlich vergrößert werden. Das kann zu einer besseren Unterscheidung in der Art und Weise, wie Anfragen bearbeitet werden, führen.
+Kann durch das Hinzufügen von langen Strings künstlich vergrößert werden. Das kann zu einer besseren Unterscheidung in der Art und Weise, wie Anfragen bearbeitet werden, führen.
 
 ### BurpSuite grep-Match
 
@@ -23,3 +23,12 @@ bei valid username AND invalid password -> Invalid username or password [ohne Pu
 | Header | Effekt | Beispiel |
 | ------ | ------ | -------- |
 | X-Forwarded-For | Kann zum Spoofen von IP-Adressen genutzt werden | X-Forwarded-For: 'abc123'/'[WORDLIST]' |
+
+### IP-Blocking
+
+#### Möglichkeiten zum umgehen
+
+- Header setzen
+- Reset durch erfolgreichen Login
+    - Ein Login mit validen Credentials _kann_ dazu führen, dass der Timeout resettet wird
+        - Logik: Username: valide, victim, valide, victim; Passwort: valide, PasswortBruteForce

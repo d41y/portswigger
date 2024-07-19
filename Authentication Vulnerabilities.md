@@ -76,7 +76,7 @@ _This lab is vulnerable to username enumeration using its response times. To sol
     - Rammbock-Attacke
     - auf den Status-Code achten -> muss ein 302 Redirect sein
 
-### Ergebnisse
+### Ergebnis
 
 - Username: Info (_hat die längste Response-Time_)
     - Beim nächsten mal vielleicht einen bekannten User mit in die Wordlist setzen, um zu sehen, ob sich die Response-Times ähneln
@@ -87,3 +87,53 @@ _This lab is vulnerable to username enumeration using its response times. To sol
 - Status-Code ist wichtig (und logisch)
 - künstliche Verlängerung der Response-Time durch langen String, der beim Verarbeiten deutlich länger braucht
 - IP-Spoofing kann wichtig sein
+
+## Lab: Broken brute-force protection, IP block
+
+_This lab is vulnerable due to a logic flaw in its password brute-force protection. To solve the lab, brute-force the victim's password, then log in and access their account page._
+
+### Durchführung
+
+- Nutzen der beiden Wordlists
+- Nach jedem erfolglosen Versuch muss einmal ein erfolgreicher Versuch stattfinden
+    - durch Benutzen der eigenen validen Credentials
+- neue Wordlists
+    - Usernames: Meiner, dann Carlos, meiner, dann Carlos, ...
+    - Passwords: Meins, eins aus der Liste, meins, eins aus der Liste ...
+
+### Ergebnis
+
+- Passwort: aaaaaa
+
+### Folgerung
+
+- IP-Blocking _kann_ resettet werden, indem ein erfolgreicher Login stattgefunden hat
+    - Angriffe so bauen, dass nach jedem Versuch ein erfolgreicher Login mit vorher erstellten Zugangsdaten stattfindet
+
+## Lab: Username enumeration via account lock
+
+_This lab is vulnerable to username enumeration. It uses account locking, but this contains a logic flaw. To solve the lab, enumerate a valid username, brute-force this user's password, then access their account page._
+
+### Durchführung:
+
+- Benutzen der Username-Wordlist
+- Setzen einer Payload von 5 für das Passwortparameter
+- Idee:
+    - Nicht vorhandene Usernames werden mit einer anderen Response ausgegeben als valide Usernames
+    - Invalid username or password vs. too many login attempts
+    - too many login attempts -> User existiert
+- Beim Passwort kann dann wieder auf Sniper-Attack gewechselt werden
+    - In Kombination mit Grep-Extract, da ich nach einem bestimmten String suche bzw. nach seiner Abwesenheit
+    - Username ist fix gesetzt, Passwort anhand der Liste
+
+### Ergebnis:
+
+- Username: atlanta
+- Passwort: 159753
+
+### Folgerung:
+
+- BurpSuite Community dauert länger als der Time Out gültig ist -> kleinere Häppchen bei den Usernamen ausprobieren
+- Grep Extract -> _Response extraction rules are used in various locations within Burp, to define the location within a response of a varying item that needs to be extracted._
+- Mitteilung direkt im Webservice können ziemlich wichtig sein
+- Herausfinden, wann der Login-Timeout einsetzt
