@@ -137,3 +137,39 @@ _This lab is vulnerable to username enumeration. It uses account locking, but th
 - Grep Extract -> _Response extraction rules are used in various locations within Burp, to define the location within a response of a varying item that needs to be extracted._
 - Mitteilung direkt im Webservice können ziemlich wichtig sein
 - Herausfinden, wann der Login-Timeout einsetzt
+
+## Lab: 2FA simple bypass
+
+### Durchführung
+
+- Beobachten, was passiert, wenn ich mich mit validen Credentials anmelde -> /login2 -> /my-account
+- Victim-Credentials nehmen
+    - in der URL das Verzeichnis wechseln
+
+### Ergebnis
+
+- Lab solved
+
+### Folgerung
+
+- 2FA durch Verzeichnisangabe umgehen
+    - Logik der Website verstehen!!!
+
+## Lab: 2FA broken logic
+
+_This lab's two-factor authentication is vulnerable due to its flawed logic. To solve the lab, access Carlos's account page._
+
+### Durchführung
+
+- Zunächst Logik der Seite verstehen
+- nach Login mit validen Credentials verify= Cookie auf Victim setzen
+- 4 digit Code bruteforcen 
+
+### Ergebnis
+
+- Erstmal übersprungen, weil ohne BurpSuite Pro kaum lösbar in unter 10 Jahren
+
+### Folgerung
+
+- Cookies wieder mal sehr wichtig
+- Cookies, wenn vulnerabel, händisch ändern und bei der Request mitgeben
